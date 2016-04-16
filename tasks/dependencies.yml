@@ -1,0 +1,7 @@
+---
+- name: install the requirements for Debian based
+  apt: name={{ item }} state=latest
+  with_items:
+    - pkg-config
+    - fuse
+    - union-fs

@@ -1,0 +1,22 @@
+---
+- name: clone tup
+  git:
+    repo="https://github.com/gittup/tup.git"
+    dest="{{ tool_path }}/tup"
+
+- name: build tup
+  shell: sh ./bootstrap.sh
+  args:
+    chdir: "{{ tool_path }}/tup"
+
+- name: clean tup directory
+  file:
+    path="{{ tool_path }}/tup/build"
+    state=absent
+
+- name: install tup
+  file:
+    src="{{ tool_path }}/tup/tup"
+    dest="/usr/bin/tup"
+    force=yes
+    state=link
