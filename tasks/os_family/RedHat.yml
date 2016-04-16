@@ -1,0 +1,12 @@
+---
+- name: install unionfs
+  yum: name=funionfs state=latest
+  when: ansible_distribution == "Fedora"
+
+- name: install the requirements for Redhat based
+  yum: name={{ item }} state=latest
+  with_items:
+    - pkgconfig
+    - fuse
+    - fuse-devel
+

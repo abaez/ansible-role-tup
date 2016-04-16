@@ -1,0 +1,9 @@
+---
+- name: install the requirements for Redhat based
+  yum: name={{ item }} state=latest
+  with_items:
+    - pkg-config
+    - unionfs-fuse
+    - fuse
+    - fuse-devel
+
