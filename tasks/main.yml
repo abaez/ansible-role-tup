@@ -1,12 +1,6 @@
 ---
+- name: dependencies
+  include: "dependencies.yml"
 
-- name: repository add
-  apt_repository:
-    repo='deb http://ppa.launchpad.net/anatol/tup/ubuntu precise main'
-    state=present
-    update_cache=yes
-
-- name: install
-  apt:
-    name=tup
-    state=latest
+- name: build
+  include: "build.yml"
