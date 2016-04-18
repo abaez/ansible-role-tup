@@ -3,32 +3,33 @@ Role Name
 [![license][2i]][2p]
 [![twitter][3i]][3p]
 
-A brief description of the role goes here.
+Install tup from source.
 
 Description
 -----------
 
-Give a description
+[Tup][4] is a DAG file based build system. Pretty darn great for a number of automation build setups. This role here installs [tup][4] from the [git][5] repository.
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+You only need to change one variable **dir.tool** in `vars/main.yml`. The variable is where you will have the tup build installed.
 
 Requirements
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+Due to build necessities, the module requires to have [abaez.common][6] installed for the prerequisites for the build to be successful.
 
 Usage
 -----
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+All you need is to have [abaez.common][6] and you should be good to go to run the role:
 
 ``` yaml
 - hosts: servers
     roles:
-        - { role: username.rolename, x: 42 }
+        - abaez.common
+        - tup
 ```
 
 Author Information
@@ -41,3 +42,6 @@ Author Information
 [2p]: ./LICENSE
 [3i]: https://img.shields.io/badge/twitter-a_baez-blue.svg
 [3p]: https://twitter.com/a_baez
+[4]: http://gittup.org/tup
+[5]: https://github.com/gittup/tup
+[6]: https://galaxy.ansible.com/abaez/common
