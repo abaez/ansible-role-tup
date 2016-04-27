@@ -13,7 +13,7 @@ Description
 Role Variables
 --------------
 
-You only need to change one variable **dir.tool** in `vars/main.yml`. The variable is where you will have the tup build installed.
+You only need to change one variable **dir.tool** in `defaults/main.yml`. The variable is where you will have the tup build installed.
 
 Requirements
 ------------
